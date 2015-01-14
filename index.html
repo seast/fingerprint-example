@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>fingerprintjs</title>
+  <style type="text/css">
+    body{
+      font-family: 'Sans'
+    }
+  </style>
+  <script src="fingerprint.js"></script>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h3 style="margin-top: 20px">Your browser info:</h3>
+    <h1 id="fp1"></h1>
+    <h1 id="fp2"></h1>
+    <h1 id="fp3"></h1>
+  </div>
+  <script>
+    document.getElementById('fp1').innerHTML = navigator.userAgent;
+    document.getElementById('fp2').innerHTML = '{ question: fp2; answer: ' + new Fingerprint().get('fp2') + ' }';
+    document.getElementById('fp3').innerHTML = '{ question: recaptcha_01152014; answer: ' + new Fingerprint().get('recaptcha_01152014') + ' }';
+  </script>
+</body>
+</html>
